@@ -1,0 +1,36 @@
+{
+  "name": "odyssey-migration-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc --build",
+    "build": "tsc",
+    "postbuild": "cp package.json dist/package.json",
+    "prettier": "prettier --write src/**/*.{scss,js,json,ts,tsx}",
+    "eslint": "eslint . --ext .js,.ts",
+    "typeorm": "typeorm-ts-node-esm",
+    "migration:generate": "npm run typeorm -- migration:generate -d ormconfig.js",
+    "migration:create": "npm run typeorm -- migration:create",
+    "migration:run": "npm run typeorm -- migration:run -d ormconfig.js",
+    "migration:revert": "npm run typeorm -- migration:revert -d ormconfig.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "5.4.5",
+    "eslint": "^8.27.0",
+    "prettier": "2.7.1"
+  }
+}
